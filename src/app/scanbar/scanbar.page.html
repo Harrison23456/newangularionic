@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Scan and Validate DNI</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-button expand="full" (click)="scanBarcode()" [disabled]="isProcessing">
+      <ion-icon slot="start" name="barcode"></ion-icon>
+      Scan Barcode
+    </ion-button>
+
+    <ion-item class="ion-margin-top">
+      <ion-label position="floating">Enter DNI</ion-label>
+      <ion-input [(ngModel)]="enteredDni" type="text" maxlength="8" placeholder="Enter DNI"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="validateDni()" [disabled]="isProcessing" class="ion-margin-top">
+      Validate DNI
+    </ion-button>
+
+    <div *ngIf="validationMessage" class="ion-margin-top">
+      <ion-text color="danger" *ngIf="validationMessage.includes('❌')">
+        <p>{{ validationMessage }}</p>
+      </ion-text>
+      <ion-text color="success" *ngIf="validationMessage.includes('✅')">
+        <p>{{ validationMessage }}</p>
+      </ion-text>
+      <ion-text color="medium" *ngIf="!validationMessage.includes('✅') && !validationMessage.includes('❌')">
+        <p>{{ validationMessage }}</p>
+      </ion-text>
+    </div>
+  </div>
+</ion-content>

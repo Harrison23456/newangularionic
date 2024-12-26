@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Escanear DNI</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button expand="full" color="primary" (click)="startScan()">
+    Escanear Código de Barras
+  </ion-button>
+
+  <div *ngIf="isScanning">
+    <p>Escaneando... Apunta al código de barras del DNI</p>
+    <ion-button expand="full" color="danger" (click)="stopScan()">Detener</ion-button>
+  </div>
+
+  <div *ngIf="scannedData">
+    <h2>Datos Escaneados:</h2>
+    <p>{{ scannedData }}</p>
+  </div>
+
+  <div *ngIf="dniNumber">
+    <h2>Número de DNI:</h2>
+    <p>{{ dniNumber }}</p>
+  </div>
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Consulta DNI</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="scanDni()" expand="full" color="primary">
+    Escanear DNI
+  </ion-button>
+
+  <div *ngIf="loading" class="loading-container">
+    <ion-spinner name="dots"></ion-spinner>
+    <p>Procesando imagen...</p>
+  </div>
+
+  <div *ngIf="image">
+    <img [src]="image" alt="Imagen capturada" class="captured-image" />
+  </div>
+</ion-content>

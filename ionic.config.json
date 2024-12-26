@@ -1,0 +1,8 @@
+{
+  "name": "DNI Detector",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

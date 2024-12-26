@@ -1,0 +1,12 @@
+<ion-card *ngIf="userData">
+  <ion-card-header>
+    <ion-card-title>
+      {{ userData.nombres || 'Nombre no disponible' }}
+      {{ userData.apellido_paterno || '' }}
+      {{ userData.apellido_materno || '' }}
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <p><strong>DNI:</strong> {{ userData.numero || 'DNI no disponible' }}</p>
+  </ion-card-content>
+</ion-card>
